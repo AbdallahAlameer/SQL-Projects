@@ -29,7 +29,7 @@ WITH RECURSIVE base_table AS
 ),
 payments_cte AS 
 (
-  -- 1. (Base Case)
+  --  (Base Case)
   SELECT 
     customer_id, 
     plan_id, 
@@ -41,7 +41,7 @@ payments_cte AS
 
   UNION ALL
 
-  -- 2. (Recursive Step)
+  --  (Recursive Step)
   SELECT 
     customer_id, 
     plan_id, 
