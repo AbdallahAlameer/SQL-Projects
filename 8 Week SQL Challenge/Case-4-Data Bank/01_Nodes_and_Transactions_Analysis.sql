@@ -129,13 +129,13 @@ WITH monthly_net AS
     SELECT 
       customer_id,
       EXTRACT(MONTH FROM txn_date) AS month,
-      SUM(CASE WHEN txn_type = 'deposit' THEN txn_amount ELSE txn_amount * -1 END)       AS net_amount
+      SUM(CASE WHEN txn_type = 'deposit' THEN txn_amount ELSE txn_amount * -1 END)  AS net_amount
     FROM customer_transactions  
     GROUP BY customer_id, EXTRACT(MONTH FROM txn_date)
   ),
 running_balances as 
   (
-    select customer_id , month , sum(net_amount) over( partition by customer_id         order by month ) as running_balance 
+    select customer_id , month , sum(net_amount) over( partition by customer_id   order by month ) as running_balance 
     from monthly_net
   ),
   
@@ -144,7 +144,7 @@ first_last_balances as
     select DISTINCT  customer_id , 
     first_value(running_balance) over(partition by customer_id order by month) as 		first_balance , 
     last_value(running_balance) over(partition by customer_id order by month 
-                                    rows between unbounded PRECEDING AND unbounded 										following ) as last_balance
+                                    rows between unbounded PRECEDING AND unbounded 	following ) as last_balance
     from running_balances
   )
   
