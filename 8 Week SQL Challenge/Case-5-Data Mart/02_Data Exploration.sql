@@ -84,7 +84,8 @@ group by demographic, age_band
 order by sales desc;
 /*
 --- Business Insights & Findings ---
-1. Data Collection Gap: The 'unknown' demographic/age_band heavily dominates Retail sales (over $16 Billion). This indicates that the vast majority of retail transactions are made without loyalty cards, representing a significant missed opportunity for the business to track and analyze customer behavior.
+1. Data Collection Gap: The 'unknown' demographic/age_band heavily dominates Retail sales (over $16 Billion).
+This indicates that the vast majority of retail transactions are made without loyalty cards, representing a significant missed opportunity for the business to track and analyze customer behavior.
 
 2. Top Customer Profile: When excluding the 'unknown' data, the primary drivers of Retail sales are 'Retirees', specifically 'Families' (~$6.6B) followed closely by 'Couples' (~$6.3B).
 */
@@ -97,7 +98,7 @@ order by sales desc;
 select 
   calendar_year,
   platform,
-  Round(sum(sales)::NUMERIC / sum(transactions) , 2) As    	   Avg_Trans_Size
+  Round(sum(sales)::NUMERIC / sum(transactions) , 2) As  Avg_Trans_Size
 from clean_weekly_sales
 group by calendar_year,platform
 order by calendar_year,platform
@@ -106,7 +107,8 @@ order by calendar_year,platform
 --- Answer & Mathematical Insight ---
 No, we cannot simply use the AVG() function on the existing 'avg_transaction' column.
 
-Doing so would calculate an "Average of Averages", which is mathematically incorrect because it assigns equal weight to every row, ignoring the fact that some weeks/rows have significantly more transactions than others.
+Doing so would calculate an "Average of Averages", which is mathematically incorrect because it assigns equal weight to every row,
+ignoring the fact that some weeks/rows have significantly more transactions than others.
 
 To find the true overall average transaction size, we must recalculate it from the base numbers by dividing the total absolute sales by the total absolute number of transactions:
 Formula: SUM(sales) / SUM(transactions)
