@@ -76,9 +76,9 @@ from cte3;
 
 1. Seasonality Ruled Out: Comparing the same 12-week period across years shows that the severe drop in 2020 (-2.14%) cannot be explained by standard seasonality alone.
 
-2. Trend Breakdown: In 2018, sales grew by +1.63% during weeks 25–36, while 2019 experienced a slight dip of -0.30%[cite: 4].
+2. Trend Breakdown: In 2018, sales grew by +1.63% during weeks 25–36, while 2019 experienced a slight dip of -0.30%.
 
-The steep decline of -2.14% (-$152.3M) in 2020 confirms that the performance drop was directly tied to changes introduced in 2020 (such as the sustainable packaging rollout) rather than annual market trends[cite: 4].
+The steep decline of -2.14% (-$152.3M) in 2020 confirms that the performance drop was directly tied to changes introduced in 2020 (such as the sustainable packaging rollout) rather than annual market trends.
 */
 
 
@@ -115,11 +115,11 @@ ORDER BY percentage_change ASC;
 
 /*
 --- Business Insights & Findings (Bonus Question: Segment Impact Analysis) ---
-1. Worst Impacted Regions: SOUTH AMERICA and EUROPE suffered the largest percentage drops in sales following the 2020 sustainable packaging change[cite: 5].
+1. Worst Impacted Regions: SOUTH AMERICA and EUROPE suffered the largest percentage drops in sales following the 2020 sustainable packaging change.
 
-2. Highest Channel Vulnerability: Shopify sales in SOUTH AMERICA experienced the sharpest drop (-42.23%), followed by EUROPE Shopify segments (-33.71% and -27.97%)[cite: 5].
+2. Highest Channel Vulnerability: Shopify sales in SOUTH AMERICA experienced the sharpest drop (-42.23%), followed by EUROPE Shopify segments (-33.71% and -27.97%).
 
 3. Actionable Takeaway: Management should prioritize investigating supply chain logistics and market feedback specifically in SOUTH AMERICA and EUROPE,
-as these regions heavily dragged down overall 2020 performance[cite: 5].
+as these regions heavily dragged down overall 2020 performance.
 */
  
